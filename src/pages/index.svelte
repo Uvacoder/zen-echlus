@@ -5,7 +5,7 @@
 <h1>Zen</h1>
 
 {#each Array(10) as x}
-	<a href="/" class="kotak">
+	<a href="/lorem-ipsum" class="kotak">
 		<h2>Judulnya lorem</h2>
 		<p>Lorem ipsum dolor, sit amet consectetur adipisicing, elit. Maiores, a. Saepe ex excepturi fugit dolore laudantium alias quos quis totam, dicta. Omnis nulla molestias vel a natus odit tempora aliquam....</p>
 	</a>
