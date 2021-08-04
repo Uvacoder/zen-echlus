@@ -8,7 +8,7 @@
 
 <div class="container">
 	<h1 class="judul">Hello World</h1>
-	<div class="isi">
+	<div class="isi prose">
 		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos possimus hic nesciunt similique eum quia amet qui omnis magnam accusamus eaque modi, architecto, ullam cupiditate ad, nulla suscipit blanditiis provident.</p>
 		<ol>
 			<li>hello</li>
@@ -42,7 +42,7 @@
 		@apply text-3xl pb-3
 	}
 	.isi {
-		@apply prose max-w-none
+		@apply max-w-none
 	}
 	.icon {
 		@apply fixed right-3 bottom-3
