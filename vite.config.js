@@ -1,6 +1,8 @@
 const { appConfig } = require('./package.json')
 const viteMainJs = require('vite-main-js')
-const { preprocess: svelteWindicss } = require('svelte-windicss-preprocess')
+// const { preprocess: svelteWindicss } = require('svelte-windicss-preprocess')
+// import WindiCSS from 'vite-plugin-windicss'
+const WindiCSS = require('vite-plugin-windicss')
 const { svelte } = require('@sveltejs/vite-plugin-svelte')
 const { port } = appConfig
 const production = process.env.NODE_ENV === 'production'
@@ -9,7 +11,7 @@ module.exports = {
     port: port,
   },
   build: {
-    cssCodeSplit: false,
+    cssCodeSplit: true,
   },
   optimizeDeps: {
     exclude: ['@roxi/routify'],
@@ -19,14 +21,15 @@ module.exports = {
   },
   plugins: [
     viteMainJs(),
+    [WindiCSS.default()],
     svelte({
       preprocess: [
-        svelteWindicss({
-          compile: false,
-          prefix: 'windi-',
-          globalPreflight: true,
-          globalUtility: true,
-        }),
+        // svelteWindicss({
+        //   compile: false,
+        //   prefix: 'windi-',
+        //   globalPreflight: true,
+        //   globalUtility: true,
+        // }),
       ],
       emitCss: true,
       hot: !production,

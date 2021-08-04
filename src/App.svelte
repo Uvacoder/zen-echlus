@@ -5,5 +5,9 @@
 
 <Router {routes} />
 
-<style global>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=MonteCarlo&family=Poppins&display=swap');
+  :global(*){
+    font-family: 'Poppins', sans-serif;
+  }
 </style>
