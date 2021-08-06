@@ -13,7 +13,7 @@
 		@apply focus:outline-none;
 	}
 	form {
-		@apply p-5
+		@apply p-5 pt-0
 	}
 	.kotak {
 		box-shadow: 10px 10px 0 0 black;
