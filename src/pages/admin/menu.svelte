@@ -1,11 +1,20 @@
 <script>
 	document.title = 'Menu'
+
+	import {redirect} from '@roxi/routify'
+
+	function keluar(){
+		localStorage.removeItem('username')
+		localStorage.removeItem('password')
+		$redirect('/login')
+	}
 </script>
 
 <div class="kotak">
 	<a href="/">Beranda website</a>
 	<a href="/admin">Beranda admin</a>
 	<a href="/admin/tulisan-baru">Tulisan baru</a>
+	<a href="/" on:click|preventDefault={keluar}>Logout</a>
 </div>
 
 <style>
