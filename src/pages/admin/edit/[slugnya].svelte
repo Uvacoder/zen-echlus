@@ -2,7 +2,7 @@
 	let judul
 	let markdown
 
-	$: document.title = `Edit ${judul}`
+	$: document.title = `Edit ${judul || ''}`
 
 	export let slugnya
 
@@ -89,7 +89,7 @@
 		@apply block my-8 mt-0 border border-black w-full p-3 bg-white
 	}
 	.tombol {
-		@apply cursor-pointer text-center user-select-none
+		@apply cursor-pointer text-center user-select-none focus:bg-gray-300;
 	}
 	.hapus {
 		@apply bg-red-500 text-white

@@ -1,22 +1,37 @@
 <script>
-	document.title = 'Hello World'
+	$: document.title = isinya.judul || '...'
+
+	import '/src/aset/monokai.css'
 
 	export let slugnya
 
+	let isinya = {}
+
 	const rasioIcon = 2
+
+	import {post} from 'axios'
+	import {stringify} from 'qs'
+	import {sql, tulisan} from './api'
+
+	async function dapatkan(){
+		const {data} = await post(sql, stringify({
+			id: tulisan,
+			kunci: 'dapatkan',
+			slug: slugnya
+		}))
+		isinya = data[0]
+	}
+	dapatkan()
 </script>
 
 <div class="container">
-	<h1 class="judul">Hello World</h1>
+	<h1 class="judul">{isinya.judul || ''}</h1>
 	<div class="isi prose">
-		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos possimus hic nesciunt similique eum quia amet qui omnis magnam accusamus eaque modi, architecto, ullam cupiditate ad, nulla suscipit blanditiis provident.</p>
-		<ol>
-			<li>hello</li>
-			<li>hello</li>
-			<li>hello</li>
-			<li>hello</li>
-			<li>hello</li>
-		</ol>
+		{#if isinya.tanggal}
+			<p><em>{new Date(+isinya.tanggal)}</em></p>
+		{/if}
+		{@html isinya.html || ''}
+		<p><a href="/admin/edit/{slugnya}">edit</a></p>
 	</div>
 </div>
 

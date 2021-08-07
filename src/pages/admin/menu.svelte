@@ -3,6 +3,7 @@
 </script>
 
 <div class="kotak">
+	<a href="/">Beranda website</a>
 	<a href="/admin">Beranda admin</a>
 	<a href="/admin/tulisan-baru">Tulisan baru</a>
 </div>

@@ -58,6 +58,6 @@
 		@apply block my-8 mt-0 border border-black w-full p-3 bg-white
 	}
 	.submit {
-		@apply user-select-none cursor-pointer
+		@apply user-select-none cursor-pointer focus:bg-gray-300
 	}
 </style>
