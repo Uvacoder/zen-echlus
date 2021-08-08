@@ -51,7 +51,7 @@
 	}
 </script>
 
-<div class="container">
+<div class="konten">
 	<h1 class="judul">{isinya.judul || ''}</h1>
 	<div class="isi prose">
 		{#if isinya.tanggal}
@@ -82,7 +82,7 @@
 	* {
 		@apply focus:outline-none;
 	}
-	.container {
+	.konten {
 		@apply p-4 pb-10
 	}
 	.judul {
@@ -100,12 +100,12 @@
 	form {
 		@apply mt-10
 	}
-	textarea.kotak {
-		@apply w-full
-	}
 	.kotak {
 		box-shadow: 10px 10px 0 0 black;
 		@apply block m-6 mx-0 my-8 mt-0 border border-black p-3 whitespace-pre-wrap
+	}
+	textarea.kotak {
+		@apply w-full
 	}
 	[type="submit"].kotak {
 		@apply cursor-pointer user-select-none bg-white focus:bg-gray-300;
