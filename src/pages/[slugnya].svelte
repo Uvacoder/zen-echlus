@@ -83,7 +83,7 @@
 		@apply focus:outline-none;
 	}
 	.konten {
-		@apply p-4 pb-10
+		@apply p-4 pb-10 md:(w-[70%] mx-auto);
 	}
 	.judul {
 		@apply text-3xl pb-3
