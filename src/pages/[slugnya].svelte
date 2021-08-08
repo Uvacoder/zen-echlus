@@ -62,7 +62,7 @@
 	</div>
 
 	<form action="" on:submit|preventDefault={kirimSupport}>
-		<textarea name="" id="" cols="30" rows="10" class="kotak" placeholder="Tulis support di sini" bind:value={teksSupport}></textarea>
+		<textarea required name="" id="" cols="30" rows="10" class="kotak" placeholder="Tulis support di sini" bind:value={teksSupport}></textarea>
 		<input type="submit" class="kotak" value="Kirim support">
 	</form>
 
