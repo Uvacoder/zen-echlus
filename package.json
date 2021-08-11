@@ -14,7 +14,7 @@
     "serve": "run-p serve:*",
     "serve:spa": "spassr",
     "serve:ssr": "spassr --ssr --port 5005",
-    "build": "cross-env NODE_ENV=production run-s build:*",
+    "build": "cross-env NODE_ENV=production run-s build:* && cp dist/index.html dist/template.html",
     "build:routify": "routify -b",
     "test": "npm run test:dev && npm run test:build",
     "test:dev": "node test/lib/wrapper dev ava test/{common,dev}/**/*.test.js",
