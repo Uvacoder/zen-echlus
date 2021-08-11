@@ -19,7 +19,7 @@ async function ambilData(req, res){
 			    </url>
 			`
 		}
-		isi += `<url><loc>https://zen.echlus.my.id</loc></url>`
+		isi += `<url><loc>https://zen.echlus.my.id/</loc></url>`
 		isi += `</urlset>`
 		res.write(isi)
 		res.end()
