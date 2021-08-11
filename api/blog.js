@@ -19,7 +19,8 @@ async function ambilData(req, res){
 
 	if (data) {
 
-		const {judul, cuplikan, slug, tanggal} = data[0]
+		let {judul, cuplikan, slug, tanggal} = data[0]
+		cuplikan = cuplikan.replace(/"/g, "").replace(/'/g, "")
 
 		template = template.replace(/<title>.*<\/title>/, `
 			<title>${judul}</title>
