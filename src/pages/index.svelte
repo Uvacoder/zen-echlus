@@ -5,22 +5,24 @@
 	import {stringify} from 'qs'
 	import {sql, tulisan} from './api'
 
-	let semuaTulisan
+	import {semuaTulisan} from './storeBlog'
+
+	// let semuaTulisan
 
 	async function dapatkan() {
 		const {data} = await post(sql, stringify({
 			id: tulisan,
 			kunci: 'list-beranda'
 		}))
-		semuaTulisan = data
+		$semuaTulisan = data
 	}
 	dapatkan()
 </script>
 
 <h1>Zen</h1>
 
-{#if semuaTulisan}
-	{#each semuaTulisan as x}
+{#if $semuaTulisan}
+	{#each $semuaTulisan as x}
 		<a href="/{x.slug}" class="kotak">
 			<h2>{x.judul}</h2>
 			<p>{x.cuplikan}....</p>
