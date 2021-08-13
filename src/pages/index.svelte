@@ -7,8 +7,6 @@
 
 	import {semuaTulisan} from './storeBlog'
 
-	// let semuaTulisan
-
 	async function dapatkan() {
 		const {data} = await post(sql, stringify({
 			id: tulisan,
