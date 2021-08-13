@@ -30,7 +30,7 @@
 	{/each}
 {/if}
 
-<a href="/admin" class="kotak">Admin</a>
+<a href="/admin/tulisan-baru" class="kotak">Tulis baru</a>
 
 <style>
 	h1 {
