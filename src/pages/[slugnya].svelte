@@ -58,7 +58,7 @@
 			<p><em>{new Date(+isinya.tanggal)}</em></p>
 		{/if}
 		{@html isinya.html || ''}
-		<blockquote><p>Buat yang mau donasi untuk kelangsungan komunitas Echlus, silahkan transfer ke <a href="https://trakteer.id/hiyurigi">halaman Trakteer Kami.</a></p></blockquote>
+		<blockquote><p>Buat yang mau donasi untuk kelangsungan komunitas Echlus, silahkan transfer ke <a href="https://trakteer.id/hiyurigi/tip">halaman Trakteer Kami.</a></p></blockquote>
 		<p><a href="/admin/edit/{slugnya}">edit</a></p>
 	</div>
 
