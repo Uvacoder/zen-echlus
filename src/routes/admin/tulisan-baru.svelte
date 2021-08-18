@@ -44,7 +44,7 @@
 <form action="" on:submit|preventDefault={tambah}>
 	<!-- {new Date(Date.now())} -->
 	<input class="kotak" bind:value={judul} type="text" required placeholder="Judul">
-	<textarea name="" class="kotak" id="" bind:value={markdown} cols="30" rows="10" placeholder="Isi"></textarea>
+	<textarea name="" class="kotak" required id="" bind:value={markdown} cols="30" rows="10" placeholder="Isi"></textarea>
 	<input type="submit" class="kotak submit" value="Kirim">
 </form>
 

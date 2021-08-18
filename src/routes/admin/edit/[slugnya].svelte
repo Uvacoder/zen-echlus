@@ -92,7 +92,7 @@
 <form action="" on:submit|preventDefault={update}>
 	<!-- {new Date(Date.now())} -->
 	<input class="kotak" bind:value={judul} type="text" required placeholder="Judul">
-	<textarea name="" class="kotak" id="" bind:value={markdown} cols="30" rows="10" placeholder="Isi"></textarea>
+	<textarea name="" class="kotak" id="" bind:value={markdown} required cols="30" rows="10" placeholder="Isi"></textarea>
 	<div class="flex gap-5">
 		<input type="submit" class="kotak tombol submit" value="Perbarui">
 		<div class="kotak tombol hapus" on:click={hapus}>Hapus</div>
