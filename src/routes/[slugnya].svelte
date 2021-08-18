@@ -36,12 +36,12 @@
 	import Meta from '$lib/Meta.svelte'
 
 	async function ambilSupport(){
-		const support = await fetch(sql, {
+		const getSupport = await fetch(sql, {
 			method: 'post',
 			headers,
 			body: `id=${support}&kunci=dapatkan&slug=${slugnya}`
 		})
-		listSupport = await support.json()
+		listSupport = await getSupport.json()
 	}
 	ambilSupport()
 
