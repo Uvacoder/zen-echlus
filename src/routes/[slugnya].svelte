@@ -103,11 +103,11 @@
 	:global(.aktifkan-prose) {
 		@apply prose max-w-none
 	}
-	.aktifkan-prose :global(img){
-		@apply block mx-auto border rounded-lg
-	}
 	.icon {
 		@apply fixed right-3 bottom-3
+	}
+	.aktifkan-prose :global(img){
+		@apply block mx-auto border rounded-lg
 	}
 	.kumpulan-kotak {
 		@apply mt-10
