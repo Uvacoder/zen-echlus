@@ -20,7 +20,7 @@
 				headers,
 				body: `id=${akun}&kunci=cek&username=${username}&password=${password}`
 			})
-			data = await dataLogin.json()
+			data = await data.json()
 
 			if (data[0].banyak > 0){
 				localStorage.username = username
