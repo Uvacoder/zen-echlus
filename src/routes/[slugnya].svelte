@@ -77,19 +77,6 @@
 		<p><a href="/admin/edit/{slugnya}">edit</a></p>
 	</div>
 
-<!--
-<div>
-<div id="SC_TBlock_858415"></div>
-<script type="text/javascript">
-(sc_adv_out = window.sc_adv_out || []).push({
-    id: 858415,
-    domain: "n.ads5-adnow.com",
-});
-</script>
-<script type="text/javascript" src="//st-n.ads5-adnow.com/js/a.js" async></script>
-</div>
--->
-
 	<form action="" on:submit|preventDefault={kirimSupport}>
 		<textarea required name="" id="" cols="30" rows="10" class="kotak" placeholder="Tulis support di sini" bind:value={teksSupport}></textarea>
 		<input type="submit" class="kotak" value="Kirim support">
@@ -115,6 +102,9 @@
 	}
 	:global(.aktifkan-prose) {
 		@apply prose max-w-none
+	}
+	.aktifkan-prose :global(img){
+		@apply block mx-auto border rounded-lg
 	}
 	.icon {
 		@apply fixed right-3 bottom-3
