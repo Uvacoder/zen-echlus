@@ -3,12 +3,18 @@
 		font-family: 'MonteCarlo', cursive;
 		@apply text-7xl text-center py-7
 	}
-	.kotak {
+	input {
+		@apply w-full
+	}
+	.kotak, form {
 		box-shadow: 10px 10px 0 0 black;
 		@apply block m-6 my-8 mt-0 border border-black p-3
 	}
 	.kotak h2 {
 		@apply text-2xl pb-2 pt-1
+	}
+	.melayang {
+		@apply fixed bottom-0 right-0 p-3 text-green-500
 	}
 </style>
 
@@ -32,7 +38,37 @@
 
 <script>
 	import Meta from '$lib/Meta.svelte'
+	import {browser} from '$app/env'
+	
 	export let semuaTulisan
+
+	let tempSemuaTulisan = [...semuaTulisan]
+	let dicari
+	const ukuranIconTulis = 3
+
+	if (browser && localStorage.yangDicari) {
+		dicari = localStorage.yangDicari
+	}
+
+	function filterTulisan(){
+		tempSemuaTulisan = [...semuaTulisan]
+
+		if (dicari) {
+			let dicariKecil = dicari.toLowerCase()
+
+			tempSemuaTulisan = tempSemuaTulisan.filter(x => x.judul.toLowerCase().includes(dicariKecil) || x.cuplikan.toLowerCase().includes(dicariKecil))
+		} else {
+			tempSemuaTulisan = [...semuaTulisan]			
+		}
+
+		console.log(dicari)
+
+		if (browser) {
+			localStorage.yangDicari = dicari
+		}
+	}
+
+	$: dicari && filterTulisan()
 </script>
 
 <svelte:head>
@@ -42,11 +78,17 @@
 
 <h1>Zen</h1>
 
-{#each semuaTulisan as x}
+<form action="">
+	<input type="text" placeholder="Cari apa?" on:keyup={filterTulisan} bind:value={dicari}>
+</form>
+
+{#each tempSemuaTulisan as x}
 	<a href="/{x.slug}" class="kotak">
 		<h2>{x.judul}</h2>
 		<p>{x.cuplikan}....</p>
 	</a>
 {/each}
 
-<a href="/admin/tulisan-baru" class="kotak">Tulis baru</a>
+<a href="/admin/tulisan-baru" class="melayang">
+	<svg width="{ukuranIconTulis}em" height="{ukuranIconTulis}em" viewBox="0 0 24 24"><g fill="none"><path fillRule="evenodd" clipRule="evenodd" d="M12 1C5.925 1 1 5.925 1 12s4.925 11 11 11s11-4.925 11-11S18.075 1 12 1zm1 15a1 1 0 1 1-2 0v-3H8a1 1 0 1 1 0-2h3V8a1 1 0 1 1 2 0v3h3a1 1 0 1 1 0 2h-3v3z" fill="currentColor"></path></g></svg>
+</a>
