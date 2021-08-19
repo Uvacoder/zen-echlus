@@ -1,6 +1,13 @@
 (function(){
+	let node = document.querySelector('.hitung-kata')
+
+	if (document.body.contains(node)) {
+		document.body.removeChild(node)
+	}
+
 	let bagianCounter = document.createElement('div')
-	bagianCounter.innerText = '0 kata'
+	bagianCounter.classList.add('hitung-kata')
+	bagianCounter.innerText = 'n kata'
 
 	const warnaTeks = '#15803d'
 	const warnaBackground = '#bbf7d0'
@@ -23,11 +30,14 @@
 
 	document.body.appendChild(bagianCounter)
 
+	let textarea = document.querySelector('iframe.editable').contentDocument.querySelector('.editable')
+
 	function hitungJumlahKata(){
-		let teks = document.querySelector('.editable').innerText.trim()
+		let teks = textarea.innerText.trim()
 		let banyakKata = teks.split('\n').map(x => x.split(' ')).flat().filter(x => x).length
 
-		bagianCounter.innerText = `${banyakKata} kata`
+		bagianCounter.innerText = `${banyakKata.toLocaleString('id')} kata`
 	}
 	hitungJumlahKata()
+	textarea.addEventListener('input', hitungJumlahKata)
 })()
