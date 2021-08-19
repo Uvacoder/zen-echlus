@@ -6,7 +6,7 @@
 	input {
 		@apply w-full
 	}
-	.kotak, form {
+	.kotak, .cari {
 		box-shadow: 10px 10px 0 0 black;
 		@apply block m-6 my-8 mt-0 border border-black p-3
 	}
@@ -92,9 +92,9 @@
 
 <h1>Zen</h1>
 
-<form action="">
+<div class="cari">
 	<input type="text" placeholder="Cari apa?" on:keyup={filterTulisan} bind:value={dicari}>
-</form>
+</div>
 
 {#each tempSemuaTulisan as x}
 	<a href="/{x.slug}" class="kotak">
